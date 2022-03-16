@@ -1,0 +1,36 @@
+plugins {
+    id 'java'
+    id 'application'
+    id 'org.openjfx.javafxplugin' version '0.0.7'
+}
+test {
+    useJUnitPlatform()
+    testLogging {
+        events 'passed', 'skipped', 'failed'
+    }
+}
+
+    applicationDefaultJvmArgs = ["-Xms4096m", "-Xmx8192m"]
+
+
+    group 'js.templates.intellij.javafx.gradle'
+    version '1.0-SNAPSHOT'
+
+    sourceCompatibility = 1.8
+
+    repositories {
+        mavenCentral()
+    }
+
+
+    dependencies {
+        implementation 'org.junit.jupiter:junit-jupiter:5.7.0'
+        testImplementation group: 'junit', name: 'junit', version: '4.12'
+    }
+
+    javafx {
+        modules = ['javafx.controls', 'javafx.fxml']
+        version = '11.0.2'
+    }
+
+    mainClassName = 'Main'
