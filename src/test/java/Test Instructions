@@ -1,0 +1,1 @@
+        For the tests, please run each of them individually. Because of the singleton approach, running all of them produces false fails.
